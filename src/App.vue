@@ -1,6 +1,6 @@
 <template>
   <Title title='Hello world!' />
-  <Age :age="age" @onUpdateAge="onUpdateAge" />
+  <Age :age="age" @onUpdateAge="onUpdateAge" :updateAgeFn='onUpdateAgeCB' />
 </template>
 
 <script>
@@ -17,6 +17,9 @@ export default {
   },
   methods: {
     onUpdateAge(num) {
+      this.age += num
+    },
+    onUpdateAgeCB(num) {
       this.age += num
     }
   }
